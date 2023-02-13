@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Dashboard from './component/Dashboard';
+import Profile from './component/Profile';
+// Example 2
+import Welcome from './example 2/Welcome';
+import SecondHOC from './example 2/SecondHOC';
+import Once from './example 2/Once';
+import Twice from './example 2/Twice';
 
 function App() {
+
+  const SecondNewComponent = SecondHOC(Welcome)
+  const IncByOne = SecondHOC(Once)
+  const IncByTwo = SecondHOC(Twice)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      hello 
+      {/* <Profile />
+      <Dashboard /> */}
+
+      {/* Example Two */}
+
+      <Welcome name="vk"/>
+      <SecondNewComponent name="vengadesh"/>
+      {/* Counter example
+      <Once />
+      <Twice /> */}
+      {/*Counter example after applying HOC so its in blue background  */}
+      <IncByOne />
+      <IncByTwo />
     </div>
   );
 }
